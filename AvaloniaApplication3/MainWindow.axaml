@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="200"
+        MaxHeight="250" MinHeight="250" MaxWidth="450" MinWidth="450"
+        x:Class="AvaloniaApplication3.MainWindow"
+        Title="AvaloniaApplication3">
+        
+        <Grid Margin="5">
+            <StackPanel 
+                        Orientation="Vertical" VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <TextBlock 
+                              Margin="20"  HorizontalAlignment="Center"
+                                Text="МЕНЮ"
+                                FontSize="30"/>
+                        <Button x:Name="Btn1" Margin="4" Width="200" HorizontalContentAlignment="Center"
+                                Content="Список клиентов"
+                                Click="Btn1_OnClick"/>
+                        <Button x:Name="Btn2" Margin="4" Width="200" HorizontalContentAlignment="Center"
+                                Content="Список заказов"
+                                Click="Btn2_OnClick"/>
+                        <Button x:Name="Btn3" Margin="4" Width="200" HorizontalContentAlignment="Center"
+                                Content="Отзывы"
+                                Click="Btn3_OnClick"/>
+                        
+                </StackPanel>
+        </Grid>
+</Window>

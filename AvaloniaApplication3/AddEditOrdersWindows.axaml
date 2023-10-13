@@ -1,0 +1,60 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:AvaloniaApplication3.Model"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication3.AddEditOrdersWindows"
+        Title="Заказ">
+           <Grid Margin="5">
+                <StackPanel 
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Center"
+                        x:DataType="models:Order">
+
+                        <TextBlock Text="Редактирование Заказа" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="20"
+                                   Margin="0,30"/>
+                                
+                        <TextBlock Text="Столик:"
+                                   Margin="4"/>
+                        <ComboBox x:Name="CBoxTable"
+                                 Width="300">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:Table">
+                                    <TextBlock Text="{Binding Number}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                                
+                        <TextBlock Text="Блюдо:"
+                                   Margin="4"/>
+                        <ComboBox x:Name="CBoxDish"
+                                  Width="300">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:DataType="models:Dish">
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                        </ComboBox>
+                                
+                        <TextBlock Text="Кол-во:" 
+                                   Margin="4"/>
+                        <NumericUpDown x:Name="NUpDownCount" FormatString="0"
+                                       Increment="1" Value="{Binding Count}"/>
+                                
+       
+                </StackPanel>
+               <StackPanel HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom">
+                   <Button x:Name="BtnSave"  HorizontalAlignment="Center" Click="BtnSave_OnClick"
+                           Content="Сохранить"
+                           Margin="5"/>
+                   <Button x:Name="BtnBack"  HorizontalAlignment="Center" Click="BtnBack_OnClick"
+                           Content="Назад"
+                           Margin="5"/>
+               </StackPanel>
+
+        </Grid>
+</Window>
